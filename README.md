@@ -5,3 +5,5 @@
 미완성 프로젝트이지만 해당 프로젝트를 기반으로 향후 LooterShooter장르의 게임 개발을 위해 공부해나가려고합니다.
 
 현재 프로젝트를 정리중에 있습니다.
+
+Youtube : https://www.youtube.com/watch?v=_L5U7MdYw3A
