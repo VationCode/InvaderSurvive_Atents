@@ -1,0 +1,5 @@
+ID,Name,HP,Speed,Type,AttackType,Skill1,Skill2,Sklil3,Skill4,DropItemListNum
+1,Alien,150,3.5,Normal,Far,GunAttack,null,null,null,2
+2,Rhino,200,5,Normal,Melee,HeadButtAttack,RushAttack,null,null,2
+3,Golem,200,5,Normal,Melee,HandAttack,HeadButtAttack,null,null,2
+100,Boss,1000,3.5,Boss,Melee,StompintAttack,HandAttack,JumpAttack,LaserAttack,100

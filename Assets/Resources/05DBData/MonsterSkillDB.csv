@@ -1,0 +1,10 @@
+MonsterName,SkillName,AttackStartDis,Damage,Type,AttackAngle,Range,RotateCount
+Alien,GunAttack,10,10,Base,10,100,1
+Rhino,HeadButtAttack,2,10,Base,45,2,1
+Rhino,RushAttack,10,20,Rush,45,2,1
+Golem,HeadButtAttack,2,10,Strong,45,2,1
+Golem,HandAttack,2,10,Base,45,2,1
+Boss,StompintAttack,2,30,Strong,180,3,2
+Boss,HandAttack,2,30,Base,45,2,1
+Boss,JumpAttack,6,50,AOE,360,5,1
+Boss,LaserAttack,10,70,AOE,30,20,6
