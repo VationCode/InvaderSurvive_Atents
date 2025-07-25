@@ -7,10 +7,14 @@ public class BossAttack : MonoBehaviour
     Monster monster;
     GameObject player;
 
+    [SerializeField]
+    private GameObject m_lineEffect;
+    [SerializeField]
+    private GameObject m_lightningArrow;
+
     public Collider jumpAttackArea;
     NavMeshAgent nav;
 
-    ParticleSystem laserParticle;
 
     bool isLook;
     bool isWalk;
@@ -27,8 +31,8 @@ public class BossAttack : MonoBehaviour
         monster = GetComponent<Monster>();
         player = PlayerMovementManager.Instance.playerObj;
         nav = GetComponent<NavMeshAgent>();
-        ResourceManager.Instance.LoadrcTexture();
-        ResourceManager.Instance.LoadrcParticle();
+        //ResourceManager.Instance.LoadrcTexture();
+        //ResourceManager.Instance.LoadrcParticle();
         nav.isStopped = true;
         nav.enabled = false;
 
@@ -192,7 +196,8 @@ public class BossAttack : MonoBehaviour
     {
         GameObject[] dangerLineObj = new GameObject[4];
         float rotationY = 0;
-        GameObject obj = ResourceManager.Instance.GetrcTexture("DangerLine");
+        GameObject obj = m_lineEffect;
+        //GameObject obj = ResourceManager.Instance.GetrcTexture("DangerLine");
         for (int i = 0; i < dangerLineObj.Length; i++)
         {
             dangerLineObj[i] = Instantiate(obj, transform.position, transform.rotation, transform);
@@ -205,7 +210,8 @@ public class BossAttack : MonoBehaviour
     {
         GameObject[] laserObj = new GameObject[8];
         float rotationY = 0;
-        GameObject obj = ResourceManager.Instance.GetrcParticle("LigthningArrow");
+        GameObject obj = m_lightningArrow;
+        //GameObject obj = ResourceManager.Instance.GetrcParticle("LigthningArrow");
         for (int i = 0; i < 8; i++)
         {
             laserObj[i] = Instantiate(obj,transform);

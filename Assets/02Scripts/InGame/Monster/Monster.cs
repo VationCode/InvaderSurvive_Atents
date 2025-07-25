@@ -1,9 +1,9 @@
-//**********23.01.16 : 각 몬스터별로 상속받도록? 변경 중 - 허인호
-//**********23.01.16 : csv파일로부터 데이터 받아오게하는 방식으로 변경 - 허인호
-//**********23.01.12 : 몬스터 받는 데미지 파티클, hp에 따른 죽는 표현 완료- 허인호
-//**********23.01.12 : 플레이어 추적 및 공격(모션만) 완성(공격 패턴 넣어야함(차후 보스나 다른 패턴있는 몬스터들 관리 편하게 하기 위해)) - 허인호
-//**********23.01.11 : 몬스터 클래스 처리를 FSM으로 변경중 BT 디자인패턴으로 적용했으나 내용이 어려워 이해를 못했기에 사용은 다음에 - 허인호 
-//**********23.01.09 : MonsterInfo 확인, 플레이어의 공격 및 거리에 따른 행동 제작중 - 허인호 
+//**********23.01.16 : 각 몬스터별로 상속받도록? 변경 중
+//**********23.01.16 : csv파일로부터 데이터 받아오게하는 방식으로 변경
+//**********23.01.12 : 몬스터 받는 데미지 파티클, hp에 따른 죽는 표현 완료
+//**********23.01.12 : 플레이어 추적 및 공격(모션만) 완성(공격 패턴 넣어야함(차후 보스나 다른 패턴있는 몬스터들 관리 편하게 하기 위해))
+//**********23.01.11 : 몬스터 클래스 처리를 FSM으로 변경중 BT 디자인패턴으로 적용했으나 내용이 어려워 이해를 못했기에 사용은 다음에
+//**********23.01.09 : MonsterInfo 확인, 플레이어의 공격 및 거리에 따른 행동 제작중
 //**********Monster : 몬스터 클래스 : 몬스터에 관한 정보를 일단은 수동으로 정하는 클래스
 /* MonsterInfo
     public int id;
@@ -31,14 +31,6 @@ public class Monster : MonoBehaviour, IDamageabel
     [HideInInspector] public Monster_DeadState dead;
     #endregion
 
-    [HideInInspector] public bool isBaseAttack;
-    [HideInInspector] public bool isStrongAttack;
-    [HideInInspector] public bool isRushAttack;
-    [HideInInspector] public bool isJumpAttack;
-    [HideInInspector] public bool isAOEAttack;
-    [HideInInspector] public bool isDead;
-    [HideInInspector] public bool isApplyDamage;
-
     public Animator animator;
     public string monsterName;
     [HideInInspector] public GameObject player;
@@ -46,7 +38,8 @@ public class Monster : MonoBehaviour, IDamageabel
     [Header("LoadData")]
     [Tooltip("위에 이름 입력하면 알아서 가져옴")]
     public MonsterInfo monsterInfo;
-
+    [SerializeField]
+    GameObject m_bloodSprayEffect;
 
     [Tooltip("플레이어 발견 거리")]
     public float discoverDis; //15임
@@ -73,7 +66,14 @@ public class Monster : MonoBehaviour, IDamageabel
     public GameObject attackColliderObj;
     [HideInInspector] public Collider attackCollider;
     bool isAttack;
-    // Start is called before the first frame update
+
+    [HideInInspector] public bool isBaseAttack;
+    [HideInInspector] public bool isStrongAttack;
+    [HideInInspector] public bool isRushAttack;
+    [HideInInspector] public bool isJumpAttack;
+    [HideInInspector] public bool isAOEAttack;
+    [HideInInspector] public bool isDead;
+    [HideInInspector] public bool isApplyDamage;
 
     public void Init()
     {
@@ -85,7 +85,7 @@ public class Monster : MonoBehaviour, IDamageabel
 
         player = PlayerMovementManager.Instance.playerObj;
         monsterInfo = MonsterTableParser.Instatnce.GetMonsterData(monsterName);
-        ResourceManager.Instance.LoadrcDamageEffect();
+        //ResourceManager.Instance.LoadrcDamageEffect();
         animator = GetComponent<Animator>();
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.enabled = false;
@@ -138,7 +138,9 @@ public class Monster : MonoBehaviour, IDamageabel
          {
             isApplyDamage = true;
             monsterInfo.hp -= damageMessage.damage;
-            GameObject bloodEffectObj = ResourceManager.Instance.GetrcDamageEffect("BloodSprayEffect");
+            GameObject bloodEffectObj = m_bloodSprayEffect;
+
+            //GameObject bloodEffectObj = ResourceManager.Instance.GetrcDamageEffect("BloodSprayEffect");
             ParticleSystem bloodEffect = bloodEffectObj.GetComponent<ParticleSystem>();
             bloodEffect = Instantiate(bloodEffect, damageMessage.hitPoint, Quaternion.LookRotation(damageMessage.hitNormal));
             bloodEffect.transform.SetParent(this.gameObject.transform);

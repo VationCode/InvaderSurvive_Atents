@@ -21,7 +21,7 @@ public class PlayerDodgeState : AllBodyBaseState
         {
             rotation = Quaternion.LookRotation(movement.moveDirection);
         }
-        movement.characterObj.transform.rotation = rotation;
+        movement.modelObj.transform.rotation = rotation;
         movement.isDodge = true;
         PlayerMovementManager.isAll = true;
         PlayerAnimationManager.Instance.animator.SetTrigger("Dodge");
@@ -38,7 +38,7 @@ public class PlayerDodgeState : AllBodyBaseState
         if (t > movement.dodgeT)
         {
             var targetRotation = Camera.main.transform.eulerAngles.y;
-            movement.characterObj.transform.eulerAngles = Vector3.up * targetRotation;
+            movement.modelObj.transform.eulerAngles = Vector3.up * targetRotation;
 
             movement.SwitchState(movement.run);
             PlayerMovementManager.isAll = false;

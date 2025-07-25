@@ -1,7 +1,7 @@
 //**********22.12.20 : crouch(앉기) 추가
 //**********22.12.17 : pickAxe(곡괭이) 추가
-//**********22.10.11 : ButtonOnPointerEvent스크립트를 각 버튼들에 추가하여 OnPointerEvent에 대한 정보 받아아옴 - 허인호
-//**********22.10.05 : 버튼과 조이스틱의 정보전달 - 허인호
+//**********22.10.11 : ButtonOnPointerEvent스크립트를 각 버튼들에 추가하여 OnPointerEvent에 대한 정보 받아아옴
+//**********22.10.05 : 버튼과 조이스틱의 정보전달
 //**********PlayerInput : 플레이어 동작 정보 전달 클래스
 using System.Collections;
 using System.Collections.Generic;
@@ -14,21 +14,20 @@ public class PlayerInput : MonoBehaviour
     static public PlayerInput Instance;
 
     #endregion
-    [SerializeField]
-    private Button[] btnArray;
+    // TODO : 안드로이드 전환 작업
+    /*[SerializeField]
+    private Button[] btnArray;*/
 
     public Vector2 moveInput { get; private set; }
     public Vector3 rotateInput { get; private set; }
-    public bool isAttack { get; private set; } //
-    public bool isCrouch { get; private set; } //
-    public bool isSword { get; private set; } //1
-    public bool isGun { get; private set; } //2
+    public bool isAttack { get; private set; }  // MouseL
+    public bool isCrouch { get; private set; }  // C
+    public bool isSword { get; private set; }   //1
+    public bool isGun { get; private set; }     //2
     public bool isPickAxe { get; private set; } //3
-    public bool isJump { get; private set; } //Space
-    public bool isReload { get; private set; } //R
-    public bool isRun { get; private set; }//현재는 기본(조이스틱으로는 설정)
-
-    //public ButtonOnPoint[] btnOnPoint { get; private set; }
+    public bool isJump { get; private set; }    //Space
+    public bool isReload { get; private set; }  //R
+    public bool isRun { get; private set; }     //기본상태 뛰기(조이스틱으로는 설정)
 
     //스킬부문
     public bool isDodge { get; private set; } // Shift 회피기 스킬
@@ -48,7 +47,6 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-
         //if (Inventory.inventoryActivated) return;
         //PC 키보드 인터페이스 방식
         moveInput = new Vector2(Input.GetAxis(horizontal), Input.GetAxis(vertical));

@@ -661,6 +661,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6344077678634495, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2182,6 +2186,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6295432009565684211, guid: 5dc8c061268d8c44d81e09afc93b7112, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2806,6 +2814,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6295432009565684211, guid: 5dc8c061268d8c44d81e09afc93b7112, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3035,6 +3047,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 265052969}
     m_Modifications:
+    - target: {fileID: 2725870203195701068, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     - target: {fileID: 6529603314225083144, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
       propertyPath: m_Name
       value: Rhino
@@ -3776,6 +3792,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 265052969}
     m_Modifications:
+    - target: {fileID: 2725870203195701068, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     - target: {fileID: 6529603314225083144, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
       propertyPath: m_Name
       value: Rhino (2)
@@ -4971,6 +4991,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6344077678634495, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5615,6 +5639,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6344077678634495, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6132,6 +6160,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2725870203195701068, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     - target: {fileID: 6529603314225083144, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
       propertyPath: m_Name
       value: Rhino (4)
@@ -7217,6 +7249,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6295432009565684211, guid: 5dc8c061268d8c44d81e09afc93b7112, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7517,8 +7553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5084bc187bb730e49968e1048fad2907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObj: {fileID: 0}
-  characterObj: {fileID: 0}
+  playerObj: {fileID: 615979382}
+  modelObj: {fileID: 1569246755}
   target: {fileID: 1743196232}
   gun: {fileID: 0}
   pickAxe: {fileID: 0}
@@ -7551,7 +7587,6 @@ MonoBehaviour:
   isDodge: 0
   dodgeT: 1
   skillET: 3
-  playerColl: {fileID: 0}
   isGunSkillE: 0
 --- !u!114 &615979385
 MonoBehaviour:
@@ -7565,7 +7600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b4a1267a2786247ad1dfe1fb78399f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnArray: []
 --- !u!143 &615979386
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7603,7 +7637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072bd88ffda8270499e12f9737a96e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 615979388}
 --- !u!95 &615979388
 Animator:
   serializedVersion: 7
@@ -7639,15 +7673,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 0}
-  pickAxe: {fileID: 0}
-  vCam: {fileID: 0}
   currentFov: 0
   adsFov: 50
   IdleFov: 0
   fovSmoothSpeed: 10
   aimPoseT: 1.5
   reloadT: 0
-  currentWeapon: {fileID: 0}
 --- !u!114 &615979390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7850,7 +7881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &663159520
 Transform:
   m_ObjectHideFlags: 0
@@ -7873,7 +7904,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663159519}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbc51f85d0ddd6b44a45e31f2f9334c8, type: 3}
   m_Name: 
@@ -11396,6 +11427,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6344077678634495, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12907,6 +12942,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6295432009565684211, guid: 5dc8c061268d8c44d81e09afc93b7112, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14171,6 +14210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76458b6f1c7d0546b33e11e156e1f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_lineEffect: {fileID: 0}
+  m_lightningArrow: {fileID: 0}
   jumpAttackArea: {fileID: 1270242665}
 --- !u!114 &934370919
 MonoBehaviour:
@@ -14184,13 +14225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec23c24bdbc81248886b315d1901b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBaseAttack: 0
-  isStrongAttack: 0
-  isRushAttack: 0
-  isJumpAttack: 0
-  isAOEAttack: 0
-  isDead: 0
-  isApplyDamage: 0
   animator: {fileID: 0}
   monsterName: Boss
   player: {fileID: 0}
@@ -14204,6 +14238,7 @@ MonoBehaviour:
     attacktType: 0
     monsterSkillList: []
     dropItemListNum: 0
+  m_bloodSprayEffect: {fileID: 0}
   discoverDis: 0
   stopDis: 0
   originPosDis: 0
@@ -14211,6 +14246,13 @@ MonoBehaviour:
   currentAttackType: 0
   attackColliderObj: {fileID: 0}
   attackCollider: {fileID: 0}
+  isBaseAttack: 0
+  isStrongAttack: 0
+  isRushAttack: 0
+  isJumpAttack: 0
+  isAOEAttack: 0
+  isDead: 0
+  isApplyDamage: 0
 --- !u!195 &934370920
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -20047,7 +20089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1569246756}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20129,6 +20171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6344077678634495, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20313,6 +20359,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2725870203195701068, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     - target: {fileID: 6529603314225083144, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
       propertyPath: m_Name
       value: Rhino (3)
@@ -22182,13 +22232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec23c24bdbc81248886b315d1901b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBaseAttack: 0
-  isStrongAttack: 0
-  isRushAttack: 0
-  isJumpAttack: 0
-  isAOEAttack: 0
-  isDead: 0
-  isApplyDamage: 0
   animator: {fileID: 0}
   monsterName: Boss
   player: {fileID: 0}
@@ -22202,6 +22245,7 @@ MonoBehaviour:
     attacktType: 0
     monsterSkillList: []
     dropItemListNum: 0
+  m_bloodSprayEffect: {fileID: 0}
   discoverDis: 0
   stopDis: 0
   originPosDis: 0
@@ -22209,6 +22253,13 @@ MonoBehaviour:
   currentAttackType: 0
   attackColliderObj: {fileID: 0}
   attackCollider: {fileID: 0}
+  isBaseAttack: 0
+  isStrongAttack: 0
+  isRushAttack: 0
+  isJumpAttack: 0
+  isAOEAttack: 0
+  isDead: 0
+  isApplyDamage: 0
 --- !u!114 &1763212504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22221,6 +22272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76458b6f1c7d0546b33e11e156e1f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_lineEffect: {fileID: 0}
+  m_lightningArrow: {fileID: 0}
   jumpAttackArea: {fileID: 1879154723}
 --- !u!1001 &1766341172
 PrefabInstance:
@@ -22672,6 +22725,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6295432009565684211, guid: 5dc8c061268d8c44d81e09afc93b7112, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23141,6 +23198,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8278858901963966973, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
+      propertyPath: rightAttach
+      value: 
+      objectReference: {fileID: 4931043649765401444}
+    - target: {fileID: 8278858901963966973, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
       propertyPath: gunInfo.name
       value: SciFiGunLightWhite
       objectReference: {fileID: 0}
@@ -23161,9 +23222,21 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8278858901963966973, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
+      propertyPath: m_bulletMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b08fd68c39d008246a329a6283a2a24d, type: 2}
+    - target: {fileID: 8278858901963966973, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
+      propertyPath: m_gunRightAttach
+      value: 
+      objectReference: {fileID: 4931043649765401444}
+    - target: {fileID: 8278858901963966973, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
       propertyPath: gunInfo.soundName
       value: Track1
       objectReference: {fileID: 0}
+    - target: {fileID: 8278858901963966973, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
+      propertyPath: weaponParticleObj
+      value: 
+      objectReference: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
     - target: {fileID: 8278858901963966973, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
       propertyPath: gunInfo.ammoRemain
       value: 1000
@@ -24649,6 +24722,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 265052969}
     m_Modifications:
+    - target: {fileID: 2725870203195701068, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
+      propertyPath: m_bloodSprayEffect
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: 1f96cc957f7161841b5632aa1ccaa495, type: 3}
     - target: {fileID: 6529603314225083144, guid: 2357bdd96b6ce844fa79e39acd2bdbbc, type: 3}
       propertyPath: m_Name
       value: Rhino (1)
@@ -25084,7 +25161,11 @@ PrefabInstance:
     - target: {fileID: 772085586599242042, guid: 76fb9b29147d9524da6644a8102e4856, type: 3}
       propertyPath: itemInfo.sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 11e47a9bfed0ea74f95767d4c1151dfb, type: 3}
+    - target: {fileID: 772085586599242043, guid: 76fb9b29147d9524da6644a8102e4856, type: 3}
+      propertyPath: m_particle
+      value: 
+      objectReference: {fileID: 6690015662301704784, guid: 9284d48d52ef1b7478750bded2f3be03, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28574,6 +28655,8 @@ MonoBehaviour:
   openInventoryBtn: {fileID: 2804438748754323193}
   closeBtn: {fileID: 2804438747286817840}
   Panel: {fileID: 2804438748649374533}
+  m_healthPotion: {fileID: 0}
+  m_manaPotion: {fileID: 0}
   inventorySlotList: []
   goldTMP: {fileID: 2804438747049844913}
   gold: 0
@@ -31711,6 +31794,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8414341750228614718, guid: b2b26c54453ba484db69d3c3c36db3e6, type: 3}
+      propertyPath: itemInfo.sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7dae43b963dc68f4e959812627931836, type: 3}
     - target: {fileID: 8414341750228614718, guid: b2b26c54453ba484db69d3c3c36db3e6, type: 3}
       propertyPath: itemInfo.itmeName
       value: ManaPotion

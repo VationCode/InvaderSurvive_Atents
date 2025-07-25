@@ -51,7 +51,7 @@ public class ResourceManager : MonoBehaviour
     private string rcParticleFolder = "03rcParticles/_Prefab";
 
     //Model
-    public void LoadrcEquipmentItem()
+    /*public void LoadrcEquipmentItem()
     {
         rcEquipmentItemModelList = new List<GameObject>();
         GameObject[] EquipmentItemModelFold = Resources.LoadAll<GameObject>(rcEquipmentItemFolder);
@@ -232,7 +232,7 @@ public class ResourceManager : MonoBehaviour
     public GameObject GetrcParticle(string _name)
     {
         return rcParticleList.Find(o => (o.name.Equals(_name)));
-    }
+    }*/
 
 
 }

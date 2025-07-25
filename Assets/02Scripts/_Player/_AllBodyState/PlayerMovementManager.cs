@@ -1,5 +1,5 @@
-//**********22.12.27 : 밑의 작업 완료 - 허인호
-//**********22.12.24 : 유한상태머신(FSM 디자인패턴)을 통한 걷기, 회전, 앉기, 회피기, 점프 제작중 - 허인호
+//**********22.12.27 : 밑의 작업 완료
+//**********22.12.24 : 유한상태머신(FSM 디자인패턴)을 통한 걷기, 회전, 앉기, 회피기, 점프 제작중
 //**********PlayerMovementManager : 전신 행동에 대한 매니저
 using System.Collections;
 using System.Collections.Generic;
@@ -22,16 +22,16 @@ public class PlayerMovementManager : MonoBehaviour, IDamageabel
         {
             Destroy(gameObject);
         }
-
     }
     #endregion
 
-    public GameObject playerObj;
-    public GameObject characterObj;
-    public GameObject target; //플레이어 포지션이 바닥에 있기에 적들이 공격할 때의 공격 날라오는 포지션은 따로
+    public GameObject playerObj;        
+    public GameObject modelObj;
+    public GameObject target;           // 플레이어 포지션이 바닥에 있기에 적들이 공격할 때의 공격 날라오는 포지션은 따로
     [HideInInspector]public Gun gun;
     [HideInInspector] public PickAxe pickAxe;
     private CharacterController characterController;
+
     #region State
     [HideInInspector] public AllBodyBaseState previousState;
     [HideInInspector] public AllBodyBaseState currentState;
@@ -98,13 +98,11 @@ public class PlayerMovementManager : MonoBehaviour, IDamageabel
     #endregion
 
     private bool isCity;
-    public Collider playerColl;
+    public Collider playerColl { get; private set; }
     private Collider currentColl;
     private Collider prevColl;
     public bool isGunSkillE;
     //private Bounds playerBounds; // 충돌처리를 위해
-
-
 
     // Start is called before the first frame update
     
@@ -114,7 +112,7 @@ public class PlayerMovementManager : MonoBehaviour, IDamageabel
         playerInfo.hp = 50;
         playerInfo.mana = 50;
         characterController = GetComponent<CharacterController>();
-        characterObj = gameObject.transform.GetChild(0).gameObject;
+        modelObj = gameObject.transform.GetChild(0).gameObject;
         currentJumpCount = jumpCount;
         playerColl = GetComponent<Collider>();
         target = transform.Find("Target").gameObject;
@@ -131,14 +129,8 @@ public class PlayerMovementManager : MonoBehaviour, IDamageabel
         SwitchState(run);
         //currentColl = GateManager.Instance.Coll[0];
         //prevColl = GateManager.Instance.Coll[0];
-
-
     }
-    private void FixedUpdate()
-    {
 
-    }
-    // Update is called once per frame
     void Update()
     {
         if (Inventory.Instance.isInventoryActive)
@@ -152,9 +144,9 @@ public class PlayerMovementManager : MonoBehaviour, IDamageabel
         }
 
         Move();
-        currentState.UpdateState(this);
         Rotate();
-        //Gate();
+
+        currentState.UpdateState(this);
     }
 
     public void SwitchState(AllBodyBaseState state) //상태 전환 함수
@@ -162,33 +154,12 @@ public class PlayerMovementManager : MonoBehaviour, IDamageabel
         currentState = state;
         currentState.EnterState(this);
     }
-    void Gate()
-    {
-        int count = 0;
-        for (int i = 0; i < GateManager.Instance.Coll.Length; i++)
-        {
-            if (playerColl.bounds.Intersects(GateManager.Instance.Coll[i].bounds))
-            {
-                count++;
-                currentColl = GateManager.Instance.Coll[i];
-            }
-        }
-        if (count <= 1)
-        {
-            if (currentColl != prevColl)
-            {
-                prevColl = currentColl;
-                UIManager.Instance.FadeInOut(prevColl.name);
-                SoundManager.Instance.PlaySE(prevColl.name);
-            }
-        }
-    }
-
+    
     public void Move()
     {
         if (isDodge)
         {
-            characterController.Move(characterObj.transform.forward * Time.deltaTime * 5f);
+            characterController.Move(modelObj.transform.forward * Time.deltaTime * 5f);
             return;
         }
         var targetSpeed = currentMoveSpeed * PlayerInput.Instance.moveInput.magnitude;
@@ -197,15 +168,21 @@ public class PlayerMovementManager : MonoBehaviour, IDamageabel
         targetSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime); //원래값(currentSpeed)에서 목표값(targetSpeed)으로 변화하는 직전까지의 값에 지연시간을 적용해 부드럽게 이어지도록.SmoothDamp는 값을 부드럽게 변화시킴
 
         //currentVelocityY += Physics.gravity.y * Time.deltaTime; //시간에 따라 중력값만큼 밑으로 계속 떨어지게 설정
+
+        if (IsGrounded())
+        {
+            currentVelocityY = 0f;
+        }
+        else
+        {
+            currentVelocityY += Physics.gravity.y * Time.deltaTime;
+        }
+
         velocity = moveDirection * targetSpeed + Vector3.up * currentVelocityY; //속도를 두가지로 나누어 앞/옆 그리고 위로 따로 계산하여 마지막에 합친것(이렇게 해야 점프때 currentVelocityY로 따로 계산할 수 있음)
 
         characterController.Move(velocity * Time.deltaTime);
 
-        if (IsGrounded())
-        {
-            //jumpT = 0;
-            currentVelocityY = 0f;
-        }
+        
     }
 
     public bool IsGrounded() //땅에 닿았는지 확인 CharacterController에 따로 있긴하지만 성능이 그렇게 좋진않기에

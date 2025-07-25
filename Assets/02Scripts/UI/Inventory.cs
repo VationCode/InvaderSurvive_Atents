@@ -1,7 +1,7 @@
-//**********23.01.03 : 인벤토리 중복확인 문제 발생 고치는중 - 허인호
-//**********23.01.02 : 사용슬롯 및 아이템 아이템 사용 완료하였으나 종류에 따른 아이템 사용 설계 재작업중 - 허인호
-//**********23.01.02 :스크롤뷰 처음만 OnPointerDown에서 드래그 시 바로 Up를 호출해버리는 문제 발생 스크롤뷰대신 이미지로 변경 - 허인호
-//**********23.01.01 : 필드아이템으로부터 메세지를 받기, 인벤토리 슬롯에 아이템을 저장, 아이템 이미지 이동 처리(제작중) - 허인호 
+//**********23.01.03 : 인벤토리 중복확인 문제 발생 고치는중
+//**********23.01.02 : 사용슬롯 및 아이템 아이템 사용 완료하였으나 종류에 따른 아이템 사용 설계 재작업중
+//**********23.01.02 :스크롤뷰 처음만 OnPointerDown에서 드래그 시 바로 Up를 호출해버리는 문제 발생 스크롤뷰대신 이미지로 변경
+//**********23.01.01 : 필드아이템으로부터 메세지를 받기, 인벤토리 슬롯에 아이템을 저장, 아이템 이미지 이동 처리(제작중)
 //**********Inventory : 인벤토리 클래스
 using System.Collections;
 using System.Collections.Generic;
@@ -50,6 +50,10 @@ public class Inventory : MonoBehaviour, ITriggerItem, IPointerDownHandler, IPoin
     [SerializeField] private Button openInventoryBtn;
     [SerializeField] private Button closeBtn;
     [SerializeField] private GameObject Panel; //인벤 켜고 끄고하기위해
+    [SerializeField]
+    private GameObject m_healthPotion;
+    [SerializeField]
+    private GameObject m_manaPotion;
     Image image;
     //private ScrollRect scrollRect;
     //private Image viewport; //레이케스트 타겟 제어하려고
@@ -68,13 +72,12 @@ public class Inventory : MonoBehaviour, ITriggerItem, IPointerDownHandler, IPoin
     ParticleSystem particle;
     void Start()
     {
-        ResourceManager.Instance.LoadrcParticle();
+        //ResourceManager.Instance.LoadrcParticle();
         dragSlot = GetComponentInChildren<DragSlot>();
         dragSlot.gameObject.SetActive(false);
         image = GetComponent<Image>();
         Panel = transform.GetChild(0).gameObject;
         useSlotNumArray = new int[2];
-
 
         gold = 5000;
         addSlotGold = 1000;
@@ -177,7 +180,8 @@ public class Inventory : MonoBehaviour, ITriggerItem, IPointerDownHandler, IPoin
         if (inventorySlotList[num].itemCount <= 0) inventorySlotList[num].image.gameObject.SetActive(false);
         if(inventorySlotList[num].itemInfo.eUseItemType == EUseItemType.HealPotion)
         {
-            GameObject obj = ResourceManager.Instance.GetrcParticle("HealthPotion");
+            GameObject obj = m_healthPotion;
+            //GameObject obj = ResourceManager.Instance.GetrcParticle("HealthPotion");
             obj = Instantiate(obj, PlayerMovementManager.Instance.target.transform.position, PlayerMovementManager.Instance.playerObj.transform.rotation, PlayerMovementManager.Instance.playerObj.transform);
             if(PlayerMovementManager.Instance.playerInfo.hp <= 100)
             {
@@ -187,7 +191,8 @@ public class Inventory : MonoBehaviour, ITriggerItem, IPointerDownHandler, IPoin
         }
         else if (inventorySlotList[num].itemInfo.eUseItemType == EUseItemType.ManaPotion)
         {
-            GameObject obj = ResourceManager.Instance.GetrcParticle("ManaPotion");
+            GameObject obj = m_manaPotion;
+            //GameObject obj = ResourceManager.Instance.GetrcParticle("ManaPotion");
             obj = Instantiate(obj, PlayerMovementManager.Instance.target.transform.position, PlayerMovementManager.Instance.playerObj.transform.rotation, PlayerMovementManager.Instance.playerObj.transform);
             if(PlayerMovementManager.Instance.playerInfo.mana <= 100)
             {

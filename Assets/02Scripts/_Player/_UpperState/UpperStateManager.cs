@@ -1,5 +1,5 @@
-//**********23.01.02 : 리로드 상태 추가(리로드 미완성 작업중) - 허인호
-//**********22.12.28 : 대기 에임상태 및 발사 시 줌효과 - 허인호 
+//**********23.01.02 : 리로드 상태 추가(리로드 미완성 작업중)
+//**********22.12.28 : 대기 에임상태 및 발사 시 줌효과
 //**********UpperStateManager : 상반신 제어 클래스
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +11,6 @@ public class UpperStateManager : MonoBehaviour
 {
 
     [HideInInspector]public Gun gun;
-    public PickAxe pickAxe;
     #region State
     public UpperBaseState currentState;
     public RifleIDleState RifleIdle = new RifleIDleState();
@@ -21,7 +20,6 @@ public class UpperStateManager : MonoBehaviour
     #endregion
 
     #region RifleAim
-    public CinemachineVirtualCamera vCam;
     [HideInInspector] public float currentFov;
     public float adsFov = 50; // 사격시 줌상태
     //public float adsFov = 60; // 사격시 줌상태
@@ -29,10 +27,10 @@ public class UpperStateManager : MonoBehaviour
     public float fovSmoothSpeed = 10;
     public float aimPoseT;
     public float reloadT;
-
-    public GameObject currentWeapon;
     #endregion
 
+    private CinemachineVirtualCamera vCam;
+    public PickAxe pickAxe { get; private set; }
    //[HideInInspector] public Rig rig;
     [HideInInspector] public static MultiAimConstraint[] multiAimConstraintData; //(애니메이션 동작 손 위치 때문에 넣음)
     void Start()

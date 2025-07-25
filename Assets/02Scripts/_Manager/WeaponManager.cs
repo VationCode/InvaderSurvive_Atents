@@ -46,7 +46,8 @@ public class WeaponManager : MonoBehaviour
         WeaponParentObj = GameObject.Find(weaponParentNode);
 
         //gunList = new List<GameObject>();
-        ResourceManager.Instance.LoadrcGunItem();
+        //ResourceManager.Instance.LoadrcGunItem();
+
         gunRightAttachObj = GameObject.Find(gunPosNode);
         foreach (GameObject one in ResourceManager.Instance.rcGunItemModelList)
         {
@@ -55,7 +56,7 @@ public class WeaponManager : MonoBehaviour
         }
 
         //swordList = new List<GameObject>();
-        ResourceManager.Instance.LoadrcSwordItem();
+        //ResourceManager.Instance.LoadrcSwordItem();
         swordRightAttachObj = GameObject.Find(swordPosNode);
         foreach (GameObject one in ResourceManager.Instance.rcSwordItemModelList)
         {

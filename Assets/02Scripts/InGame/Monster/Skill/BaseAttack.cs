@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class BaseAttack : MonoBehaviour
 {
-    Monster monster;
-    GameObject target;
     public GameObject firePos;
-    float attackT;
-    [SerializeField] float meleeT;
-    [SerializeField] float farT;
+    [SerializeField] 
+    float meleeT;
+    [SerializeField] 
+    float farT;
     public float attackDis;
+    [SerializeField] 
+    GameObject m_bullet;
+
+    float attackT;
+    GameObject target;
+    Monster monster;
     float meleeAttackDis;
     float farAttackDis;
-    private float T;
+    float T;
     private void Start()
     {
         monster = GetComponent<Monster>();
@@ -41,7 +46,7 @@ public class BaseAttack : MonoBehaviour
         {
             firePos = transform.Find("firePos").gameObject;
         }*/
-        ResourceManager.Instance.LoadrcMonsterBullet();
+        //ResourceManager.Instance.LoadrcMonsterBullet();
         if (_monster.monsterInfo.attacktType == ATTACKTYPE.Melee)
         {
             T = meleeT;
@@ -92,7 +97,8 @@ public class BaseAttack : MonoBehaviour
 
     public void CreateBullet()
     {
-        GameObject bullet = ResourceManager.Instance.GetrcMonsterBullet("Bullet");
+        //GameObject bullet = ResourceManager.Instance.GetrcMonsterBullet("Bullet");
+        GameObject bullet = m_bullet;
         Instantiate(bullet, firePos.transform.position, firePos.transform.rotation);
     }
 }

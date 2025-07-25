@@ -1,6 +1,6 @@
-//**********23.01.03 : 필드아이템 다루는 클래스에서 아이템 클래스로 재설계 - 허인호
-//**********23.01.02 : 필드 아이템과 인벤토리에서 장착이나 사용 시 아이템에 대한 구분 필요 - 허인호
-//**********22.12.30 : 필드에 생성된 아이템을 캐릭터 바운즈와의 접촉을 통한 정보처리와 인벤토리로 메세지 정보 전달 - 허인호 
+//**********23.01.03 : 필드아이템 다루는 클래스에서 아이템 클래스로 재설계
+//**********23.01.02 : 필드 아이템과 인벤토리에서 장착이나 사용 시 아이템에 대한 구분 필요
+//**********22.12.30 : 필드에 생성된 아이템을 캐릭터 바운즈와의 접촉을 통한 정보처리와 인벤토리로 메세지 정보 전달
 //**********Item : 아이템 클래스
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     public ItemInfo itemInfo;
-    
+
     // 콜라이더 바운즈를 통한 플레이어와의 접촉 확인
     private Collider coll;
     private Collider playerColl; 
@@ -19,7 +19,8 @@ public class Item : MonoBehaviour
     {
         coll = GetComponentInChildren<Collider>();
         playerColl = PlayerMovementManager.Instance.playerObj.GetComponent<Collider>();
-        itemInfo.sprite = Resources.Load<Sprite>("02rcTextures/UI/Item/" + itemInfo.itmeName);
+        //itemInfo.sprite = Resources.Load<Sprite>("02rcTextures/UI/Item/" + itemInfo.itmeName);
+        //itemInfo.sprite = m_itemSprite;
     }
 
     //필드에서 플레이어와 접촉 시 정보 전달 함수

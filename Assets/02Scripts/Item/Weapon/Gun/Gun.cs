@@ -1,6 +1,6 @@
-//**********23.01.12 : IDamageble 컴포넌트 받아오는것 부모로 변경 - 허인호 
-//**********23.01.05 : 재장전 UI 및 탄 수에 이따른 기능 구현 - 허인호
-//**********23.01.04 : Gun  생성후 행해질 Action들 제작중(현재 발사 및 파티클 생성) - 허인호
+//**********23.01.12 : IDamageble 컴포넌트 받아오는것 부모로 변경
+//**********23.01.05 : 재장전 UI 및 탄 수에 이따른 기능 구현
+//**********23.01.04 : Gun  생성후 행해질 Action들 제작중(현재 발사 및 파티클 생성)
 //**********Gun : Gun 클래스
 using System.Collections;
 using System.Collections.Generic;
@@ -9,12 +9,13 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public GunInfo gunInfo;
-    private const string gunAttachNode = "----Model----/Player/Character/Vanguard By T. Choonyung/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/GunRightAttach";
+    
     public GameObject firePos;
-    private GameObject rightAttach;
+    [SerializeField] private GameObject m_gunRightAttach;
     private RightHandTracking rightHandTracking;
     
     private const string particleNode = "03rcParticles/GunEffect/WeaponEffects/Prefabs/";
+    [SerializeField] 
     private GameObject weaponParticleObj;
     private ParticleSystem particle;
     private bool particleDuplicate;
@@ -27,7 +28,9 @@ public class Gun : MonoBehaviour
     public LayerMask excludeTarget; //조준에서 제외 레이어
     private Vector3 aimPoint;
 
-    private const string bulletmaterrialNode = "01rcModels/Item/Weapons/_Bullet/";
+    //private const string bulletmaterialNode = "01rcModels/Item/Weapons/_Bullet/";
+    [SerializeField]
+    private Material m_bulletMaterial;
     private LineRenderer bulletLineRenderer;
 
     //private const string skillParticleNode = "03rcParticles/SkillEffect/_Prefab/";
@@ -38,7 +41,7 @@ public class Gun : MonoBehaviour
     {
         GameObject parent = GameObject.FindGameObjectWithTag("WeaponPos");
         transform.SetParent(parent.transform);
-        rightAttach = GameObject.Find(gunAttachNode);
+
         rightHandTracking = GetComponent<RightHandTracking>();
         firePos = GameObject.FindGameObjectWithTag("FirePos");
         for (int i = 0; i < firePos.transform.childCount - 1; i++)
@@ -51,7 +54,8 @@ public class Gun : MonoBehaviour
         }
         if(!particleDuplicate)
         {
-            weaponParticleObj = Resources.Load<GameObject>(particleNode + gunInfo.particleName);
+            //weaponParticleObj = Resources.Load<GameObject>(particleNode + gunInfo.particleName);
+
             weaponParticleObj = Instantiate(weaponParticleObj);
             weaponParticleObj.transform.position = firePos.transform.position;
             weaponParticleObj.transform.rotation = firePos.transform.rotation;
@@ -71,7 +75,9 @@ public class Gun : MonoBehaviour
         bulletLineRenderer.positionCount = 2;
         bulletLineRenderer.startWidth = 0.02f;
         bulletLineRenderer.endWidth = 0.02f;
-        bulletLineRenderer.material = Resources.Load<Material>(bulletmaterrialNode + gunInfo.bulletMaterrialName);
+        //bulletLineRenderer.material = Resources.Load<Material>(bulletmaterialNode + gunInfo.bulletMaterrialName);
+        bulletLineRenderer.material = m_bulletMaterial;
+
         bulletLineRenderer.enabled = false;
 
         gunInfo.magAmmo = gunInfo.magCapacity; //현재 탄창에 남아있는 탄의 수 최대로 초기화
@@ -136,7 +142,6 @@ public class Gun : MonoBehaviour
 
     private void LateUpdate()
     {
-        rightHandTracking.HandTracking(rightAttach);
-
+        rightHandTracking.HandTracking(m_gunRightAttach);
     }
 }
