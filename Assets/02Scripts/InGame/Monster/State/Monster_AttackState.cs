@@ -19,7 +19,6 @@ public class Monster_AttackState : MonsterBaseState
 
     public override void UpdateState(Monster monster)
     {
-        Debug.Log("attackupdate");
         //죽었을 때
         //대상에게 각 공격들 랜덤으로 진행
         //적이 범위에서 벗어났을 경우(완전히 벗어났을 경우)

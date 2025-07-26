@@ -33,8 +33,8 @@ public class BossAttack : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         //ResourceManager.Instance.LoadrcTexture();
         //ResourceManager.Instance.LoadrcParticle();
-        nav.isStopped = true;
-        nav.enabled = false;
+        //nav.isStopped = true;
+        //nav.enabled = false;
 
         jumpAttackArea.enabled = false;
     }
