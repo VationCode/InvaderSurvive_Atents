@@ -12,7 +12,6 @@
 
 ## [ 초기 기획서 ]
 구글드라이브
-
 https://drive.google.com/file/d/11VlzOhTOvSKi6fm5S5B9KLi3RtqqOAzk/view?usp=drive_link
 
 
