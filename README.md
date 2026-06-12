@@ -45,7 +45,7 @@ https://youtu.be/T8vrjyn0rIE?si=2yDw_S3FvErB0Shu
 - Lobby 
 - InGame
 
-### 지역 기반 적 생성 시스
+### 지역 기반 적 생성 시스템
 맵 전체를 일정한 크기의 격자(Grid)로 분할하여 적을 배치하는 영역 기반 스폰 시스템을 구현했습니다.
 
 
