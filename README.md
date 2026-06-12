@@ -19,7 +19,7 @@ https://drive.google.com/file/d/11VlzOhTOvSKi6fm5S5B9KLi3RtqqOAzk/view?usp=drive
 ## [ 데모 영상 ]
 YouTube
 
-https://youtu.be/T8vrjyn0rIE?si=2yDw_S3FvErB0Shu
+https://youtu.be/_L5U7MdYw3A?si=r9k0UudYb4_w8UMo
 
 
 ## [ 개발 환경 ]
