@@ -37,7 +37,6 @@ https://youtu.be/T8vrjyn0rIE?si=2yDw_S3FvErB0Shu
 - 서페이스 셰이더, 멀티 텍스처를 활용한 셰이더 커스텀
 - Navmesh AI를 통한 적들 경로 순찰
 - bounds방식의 감지 계산
-- 
 
 
 ## [ 아키텍처 ]
