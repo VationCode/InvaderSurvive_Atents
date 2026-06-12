@@ -50,12 +50,20 @@ https://youtu.be/T8vrjyn0rIE?si=2yDw_S3FvErB0Shu
 
 
 #####  구조
-Map
- /├── Cell (0,0)
- /├── Cell (0,1)
- /├── Cell (0,2)
- /├── ...
- /└── Cell (N,M)
+######Map
+ ├── Cell (0,0)
+ 
+ 
+ ├── Cell (0,1)
+ 
+ 
+ ├── Cell (0,2)
+ 
+ 
+ ├── ...
+ 
+ 
+ └── Cell (N,M)
 
 
 ##### 핵심 구현
