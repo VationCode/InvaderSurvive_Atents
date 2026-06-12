@@ -1,9 +1,8 @@
-
+# InvaderSuvrvie_Antents
 미완성 프로젝트이지만 해당 프로젝트를 기반으로 향후 LooterShooter장르의 게임 개발을 위해 공부해나가려고합니다.
 
 현재 프로젝트를 정리중에 있습니다.
 
-# InvaderSuvrvie_Antents
 ## [ 프로젝트 개요 ]
 - TPS + RPG 요소를 결합한 루터슈터장르를 목표로한 프로젝트
 - 국비지원 6개월 장기 학습 프로그램에서 개발하였던 프로젝트
